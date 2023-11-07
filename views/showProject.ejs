@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <title>All Projects</title>
+    <style>
+        body{
+            background-color:thistle;
+        }
+        .navbar{
+            background-color:rosybrown;
+        }
+
+        .card{
+            border-radius: 50px;
+            margin:20px;
+        }
+
+     
+    </style>
+</head>
+
+<body>
+    <!-- nav bar -->
+    <nav class="navbar bg-body-tertiary sticky-top">
+        <div class="container-fluid">
+            <h2 class="navbar-brand">All Projects</h2>
+            <form class="d-flex">
+                <a href="/home" class="btn btn-primary">Add new Project</a>
+            </form>
+        </div>
+    </nav>
+    <!-- card -->
+    <% for(let info of allInfo){ %>
+        <div class="card border border-warning">
+            <h5 class="card-header">
+                <%- info.name %>
+            </h5>
+            <div class="card-body">
+                <h5 class="card-title">Assigned to - <%- info.asgn %>
+                </h5>
+                <p class="card-text">
+                    <%- info.desc %>
+                </p>
+              
+                <form method="post" action="/<%- info._id %>">
+                    <button class="btn btn-dark" style="width: 10%;">Delete</button>
+                </form>
+            </div>
+        </div>
+    <% } %>
+
+</body>
+
+</html>

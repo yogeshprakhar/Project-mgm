@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Project Management Tool</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS styles */
+        body {
+            background-color:thistle;
+        }
+
+        .custom-form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: dimgrey;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .custom-form label {
+            font-weight: 500;
+            color: white;
+        }
+        
+        .container{
+            padding: 100px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form method='post' action="/allProject" novalidate class="custom-form needs-validation">
+                    <h2 class="mb-4 text-center"><b>Add Project Details</b></h2>
+
+                    <div class="form-group">
+                        <label for="projectName">Project Name:</label>
+                        <input type="text" class="form-control" required name="info[name]"
+                            placeholder="Enter project name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projectDescription">Project Description:</label>
+                        <textarea class="form-control" required name="info[desc]"
+                            placeholder="Enter project description"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assignedto">Assigned To:</label>
+                        <input class="form-control" required name="info[asgn]"
+                            placeholder="Enter name"></input>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <a href="/show" class="btn btn-primary">See Projects</a>
+                </form> 
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
